@@ -34,10 +34,36 @@ Use "tunnelr [command] --help" for more information about a command.
 
 Generate some ssh keys
 
+```bash
+Generates key pair for use with tunnelr
+
+Usage:
+  tunnelr keys [flags]
+
+Flags:
+  -h, --help          help for keys
+  -n, --name string   name for the generated keys (without extension) (default "id_rsa")
+```
+
 ### rssh
 
 Heavily influenced by [andrew-d's rssh](https://github.com/andrew-d/rssh).  Probably made worse by wrapping things
 the way I generally do them in Go[lang].  Integrated into tunnelr as a subcommand.
+
+```bash
+Opens reverse ssh connection to an address
+
+Usage:
+  tunnelr rssh [flags]
+
+Flags:
+  -c, --command string    local command to execute (default "/bin/sh")
+  -h, --help              help for rssh
+  -i, --identity string   ssh identity (key) file
+      --insecure          ignore host key verification
+  -l, --listen string     remote listen address and port (default "127.0.0.1:22345")
+  -u, --username string   connect as given username
+```
 
 ## License
 
